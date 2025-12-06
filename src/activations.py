@@ -26,5 +26,4 @@ ACTIVATION_FACTORIES = {
     "mish":      lambda: Mish(),
     "sawtooth":  lambda: Sawtooth(),
     "sinlinear": lambda: SinLinear(),
-    "KAN": KAN, 
 }
