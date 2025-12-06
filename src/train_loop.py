@@ -2,21 +2,16 @@ import time
 import torch
 import torch.nn as nn
 from models import MLP
+from kan_model import KAN
 
-def train_one_activation(
-    activation_name,
-    train_loader,
-    test_loader,
-    input_dim,
-    output_dim,
-    hidden_dims=[256, 128],
-    epochs=5,
-    device=None
-):
+def train_one_activation(activation_name, train_loader, test_loader, input_dim, output_dim, hidden_dims=[256, 128], epochs=5,device=None):
     if device is None:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    model = MLP(input_dim, hidden_dims, output_dim, activation_name).to(device)
+        
+    if activation_name == "KAN":
+        model = KAN(input_dim, hidden_dims, output_dim).to(device)
+    else:
+        model = MLP(input_dim, hidden_dims, output_dim, activation_name).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 

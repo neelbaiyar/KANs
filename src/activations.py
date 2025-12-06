@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from kan_model import KAN
 
 class Mish(nn.Module):
     def forward(self, x):
@@ -18,11 +19,12 @@ ACTIVATION_FACTORIES = {
     "relu":      lambda: nn.ReLU(),
     "leakyrelu": lambda: nn.LeakyReLU(0.1),
     "gelu":      lambda: nn.GELU(),
-    "silu":      lambda: nn.SiLU(),      # Swish
+    "silu":      lambda: nn.SiLU(),
     "tanh":      lambda: nn.Tanh(),
     "sigmoid":   lambda: nn.Sigmoid(),
     "softplus":  lambda: nn.Softplus(),
     "mish":      lambda: Mish(),
     "sawtooth":  lambda: Sawtooth(),
     "sinlinear": lambda: SinLinear(),
+    "KAN": KAN, 
 }
