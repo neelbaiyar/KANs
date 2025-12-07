@@ -1,6 +1,6 @@
 # KANs: Kolmogorov-Arnold Networks vs Standard Activations
 
-This project benchmarks **Kolmogorov--Arnold Networks (KANs)** against
+This project benchmarks **Kolmogorov-Arnold Networks (KANs)** against
 standard neural network activation functions (ReLU, GELU, etc.) on image
 classification tasks. We evaluate performance across **MNIST** and
 **CIFAR-10**, comparing:
@@ -102,7 +102,7 @@ You can:
 
 ## Early Stopping
 
-All models use **validation-loss--based early stopping**:
+All models use **validation-loss based early stopping**:
 
 -   Training halts if validation loss does not improve for **5
     consecutive epochs**
