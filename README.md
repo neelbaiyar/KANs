@@ -1,4 +1,4 @@
-# KANs -- Kolmogorov--Arnold Networks vs Standard Activations
+# KANs -- Kolmogorov-Arnold Networks vs Standard Activations
 
 This project benchmarks **Kolmogorov--Arnold Networks (KANs)** against
 standard neural network activation functions (ReLU, GELU, etc.) on image
