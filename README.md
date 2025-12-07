@@ -1,4 +1,4 @@
-# KANs -- Kolmogorov-Arnold Networks vs Standard Activations
+# KANs: Kolmogorov-Arnold Networks vs Standard Activations
 
 This project benchmarks **Kolmogorov--Arnold Networks (KANs)** against
 standard neural network activation functions (ReLU, GELU, etc.) on image
@@ -116,11 +116,11 @@ All models use **validation-loss--based early stopping**:
 
 After a full run, the following files are generated:
 
--   `full_results_*.json` -- Full training + evaluation logs
--   `accuracy_table.csv` -- Final test accuracy comparison
--   `training_time_table.csv` -- Total training time per model
--   `sparsity_table.csv` -- First-layer sparsity metric
--   `val_loss_table.csv` -- Best & final validation loss
+-   `full_results_*.json`: Full training + evaluation logs
+-   `accuracy_table.csv`: Final test accuracy comparison
+-   `training_time_table.csv`: Total training time per model
+-   `sparsity_table.csv`: First-layer sparsity metric
+-   `val_loss_table.csv`: Best & final validation loss
 
 Plots include:
 
@@ -146,8 +146,8 @@ These results support the hypothesis that:
 
 ## Datasets Used
 
--   **MNIST** -- 28×28 grayscale handwritten digit images
--   **CIFAR-10** -- 32×32 RGB natural images
+-   **MNIST**: 28×28 grayscale handwritten digit images
+-   **CIFAR-10**: 32×32 RGB natural images
 
 Both datasets are downloaded automatically via `torchvision`.
 
@@ -155,9 +155,9 @@ Both datasets are downloaded automatically via `torchvision`.
 
 ## Authors
 
--   **Neel Aiyar** -- Experiment pipeline, training system,
+-   **Neel Aiyar**: Experiment pipeline, training system,
     benchmarking, visualization
--   **Vadim Pelyushenko** -- Custom activation functions, theoretical analysis,
+-   **Vadim Pelyushenko**: Custom activation functions, theoretical analysis,
     write-up
 
 ------------------------------------------------------------------------
