@@ -4,7 +4,7 @@ import torch.nn as nn
 from models import MLP
 from kan_model import KAN
 
-def train_one_activation(activation_name, train_loader, test_loader, input_dim, output_dim, hidden_dims=[256, 128], epochs=5,device=None):
+def train_one_activation(activation_name, train_loader, test_loader, input_dim, output_dim, hidden_dims=[256, 128], epochs=10,device=None,  early_stop_patience=5):
     if device is None:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         
@@ -23,6 +23,9 @@ def train_one_activation(activation_name, train_loader, test_loader, input_dim, 
         "test_accuracy": None,
         "sparsity_first_hidden": None,
     }
+    
+    best_val_loss = float("inf")
+    patience_counter = 0
 
     for epoch in range(epochs):
         model.train()
@@ -61,6 +64,15 @@ def train_one_activation(activation_name, train_loader, test_loader, input_dim, 
         val_acc = correct / total
 
         history["val_loss"].append(val_loss)
+        
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            patience_counter = 0
+        else:
+            patience_counter += 1
+            if patience_counter >= early_stop_patience:
+                print(f"⏹ Early stopping at epoch {epoch+1}")
+                break
 
         print(f"[{activation_name}] Epoch {epoch+1}/{epochs} "
               f"| Train {train_loss:.4f} | Val {val_loss:.4f} "
