@@ -5,10 +5,10 @@ standard neural network activation functions (ReLU, GELU, etc.) on image
 classification tasks. We evaluate performance across **MNIST** and
 **CIFAR-10**, comparing:
 
--   Test accuracy\
--   Training time\
--   Validation loss\
--   Sparsity\
+-   Test accuracy
+-   Training time
+-   Validation loss
+-   Sparsity
 
 The goal is to test whether **learned functional activations (KANs)**
 can achieve **competitive accuracy with improved sparsity and
@@ -65,14 +65,14 @@ Open and run:
 
 This notebook automatically:
 
--   Loads MNIST and CIFAR-10\
--   Benchmarks ReLU, GELU, and KAN\
--   Applies early stopping\
+-   Loads MNIST and CIFAR-10
+-   Benchmarks ReLU, GELU, and KAN
+-   Applies early stopping
 -   Saves:
-    -   Accuracy table\
-    -   Training time table\
-    -   Sparsity table\
-    -   Validation loss table\
+    -   Accuracy table
+    -   Training time table
+    -   Sparsity table
+    -   Validation loss table
 -   Generates publication-ready plots
 
 ------------------------------------------------------------------------
@@ -93,10 +93,10 @@ EPOCHS_BY_DATASET = {
 
 You can:
 
--   Add new activation functions in `activations.py`\
--   Toggle KAN on/off\
--   Adjust epochs per dataset\
--   Scale experiments without touching core training logic\
+-   Add new activation functions in `activations.py`
+-   Toggle KAN on/off
+-   Adjust epochs per dataset
+-   Scale experiments without touching core training logic
 
 ------------------------------------------------------------------------
 
@@ -106,9 +106,9 @@ All models use **validation-loss--based early stopping**:
 
 -   Training halts if validation loss does not improve for **5
     consecutive epochs**
--   Prevents overfitting\
--   Saves compute\
--   Ensures fair convergence comparisons\
+-   Prevents overfitting
+-   Saves compute
+-   Ensures fair convergence comparisons
 
 ------------------------------------------------------------------------
 
@@ -116,26 +116,26 @@ All models use **validation-loss--based early stopping**:
 
 After a full run, the following files are generated:
 
--   `full_results_*.json` -- Full training + evaluation logs\
--   `accuracy_table.csv` -- Final test accuracy comparison\
--   `training_time_table.csv` -- Total training time per model\
--   `sparsity_table.csv` -- First-layer sparsity metric\
--   `val_loss_table.csv` -- Best & final validation loss\
+-   `full_results_*.json` -- Full training + evaluation logs
+-   `accuracy_table.csv` -- Final test accuracy comparison
+-   `training_time_table.csv` -- Total training time per model
+-   `sparsity_table.csv` -- First-layer sparsity metric
+-   `val_loss_table.csv` -- Best & final validation loss
 
 Plots include:
 
--   Validation Loss vs Epoch (MNIST & CIFAR-10)\
--   Accuracy comparisons\
--   Speed vs Accuracy tradeoffs\
+-   Validation Loss vs Epoch (MNIST & CIFAR-10)
+-   Accuracy comparisons
+-   Speed vs Accuracy tradeoffs
 
 ------------------------------------------------------------------------
 
 ## Key Findings
 
--   KAN achieves accuracy comparable to ReLU and GELU\
--   KAN converges in fewer effective epochs on CIFAR-10\
--   KAN and ReLU produce significantly higher sparsity than GELU\
--   GELU slightly dominates in absolute accuracy\
+-   KAN achieves accuracy comparable to ReLU and GELU
+-   KAN converges in fewer effective epochs on CIFAR-10
+-   KAN and ReLU produce significantly higher sparsity than GELU
+-   GELU slightly dominates in absolute accuracy
 
 These results support the hypothesis that:
 
@@ -146,7 +146,7 @@ These results support the hypothesis that:
 
 ## Datasets Used
 
--   **MNIST** -- 28×28 grayscale handwritten digit images\
+-   **MNIST** -- 28×28 grayscale handwritten digit images
 -   **CIFAR-10** -- 32×32 RGB natural images
 
 Both datasets are downloaded automatically via `torchvision`.
@@ -156,9 +156,9 @@ Both datasets are downloaded automatically via `torchvision`.
 ## Authors
 
 -   **Neel Aiyar** -- Experiment pipeline, training system,
-    benchmarking, visualization\
+    benchmarking, visualization
 -   **Vadim Pelyushenko** -- Custom activation functions, theoretical analysis,
-    write-up\
+    write-up
 
 ------------------------------------------------------------------------
 
