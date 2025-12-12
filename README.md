@@ -75,6 +75,8 @@ This notebook automatically:
     -   Validation loss table
 -   Generates publication-ready plots
 
+It is easiest if you use Google Colab (we highly recommend it)
+
 ------------------------------------------------------------------------
 
 ## Experiment Configuration
