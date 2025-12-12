@@ -76,6 +76,7 @@ This notebook automatically:
 -   Generates publication-ready plots
 
 It is easiest if you use Google Colab (we highly recommend it)
+Link: https://drive.google.com/drive/folders/1iedK_YSvQT4eP_mjDWqnbG0V5sm3kofF?usp=sharing
 
 ------------------------------------------------------------------------
 
